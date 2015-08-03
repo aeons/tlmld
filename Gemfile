@@ -26,5 +26,6 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'guard-rspec'
+  gem 'shoulda-matchers', require: false
 end
 
