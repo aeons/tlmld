@@ -76,3 +76,12 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# RubyMine files
+.idea/
+
+# Vagrant files
+.vagrant/
+
+# Chef files
+cookbooks/
