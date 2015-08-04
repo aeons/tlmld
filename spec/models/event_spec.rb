@@ -10,6 +10,7 @@ RSpec.describe Event, type: :model do
   it { is_expected.to_not validate_presence_of :ends_at }
   it { is_expected.to_not validate_presence_of :registration_starts_on }
   it { is_expected.to_not validate_presence_of :registration_ends_on }
+  it { is_expected.to have_many :registrations }
 
   context 'is invalid when' do
     specify 'start time is not specified' do
@@ -25,7 +26,7 @@ RSpec.describe Event, type: :model do
     end
 
     specify 'registration start is not a date' do
-     expect(build(:event, registration_starts_on: 'not a date')).to_not be_valid
+      expect(build(:event, registration_starts_on: 'not a date')).to_not be_valid
     end
 
     specify 'registration end is not a date' do

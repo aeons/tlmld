@@ -8,4 +8,6 @@ class Event < ActiveRecord::Base
   validates :registration_ends_on, date: {after: :registration_starts_on,
                                           message: 'must be after registration start date',
                                           allow_blank: true}
+
+  has_many :registrations, dependent: :destroy
 end
