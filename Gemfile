@@ -4,6 +4,8 @@ gem 'rails', '4.2.3'
 gem 'bcrypt'
 gem 'pg'
 
+gem 'date_validator'
+
 gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
