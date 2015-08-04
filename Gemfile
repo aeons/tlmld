@@ -13,6 +13,10 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
 
+group :development do
+  gem 'pry-rails'
+end
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
