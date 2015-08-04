@@ -7,6 +7,7 @@ RSpec.describe Event, type: :model do
 
   it { is_expected.to validate_presence_of :title }
   it { is_expected.to validate_presence_of :description }
+  it { is_expected.to validate_presence_of :starts_at }
   it { is_expected.to_not validate_presence_of :ends_at }
   it { is_expected.to_not validate_presence_of :registration_starts_on }
   it { is_expected.to_not validate_presence_of :registration_ends_on }

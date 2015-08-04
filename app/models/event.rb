@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  validates_presence_of :title, :description
+  validates_presence_of :title, :description, :starts_at
   validates :starts_at, date: true
   validates :ends_at, date: {after: :starts_at,
                              message: 'must be after start time',
