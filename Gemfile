@@ -5,6 +5,7 @@ gem 'bcrypt'
 gem 'pg'
 
 gem 'date_validator'
+gem 'rails_admin'
 
 gem 'sass-rails'
 gem 'uglifier'
