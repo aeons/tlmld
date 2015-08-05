@@ -2,9 +2,10 @@
 # vi: set ft=ruby :
 
 Vagrant.configure(2) do |config|
-  config.vm.box = "ubuntu/vivid64"
+  config.vm.box = 'ubuntu/trusty64'
 
-  config.vm.network "forwarded_port", guest: 3000, host: 3000
+  config.vm.network 'forwarded_port', guest: 3000, host: 3000
+  config.vm.synced_folder '.', '/home/vagrant/code', type: 'smb'
 
   config.vm.provider :virtualbox do |vb|
     vb.memory = 8192
@@ -31,41 +32,17 @@ Vagrant.configure(2) do |config|
                                 rubies: ['2.2.2'],
                                 global: '2.2.2',
                                 gems: {
-                                    :'2.2.2' => [
+                                    '2.2.2' => [
                                         {name: 'bundler'}
                                     ]
                                 }
                             }]
         },
         postgresql: {
-            enable_pgdg_apt: false,
-            version: '9.4',
             password: {
                 postgres: 'password'
             },
-            pg_hba: [
-                {
-                    type: 'local',
-                    db: 'postgres',
-                    user: 'postgres',
-                    addr: nil,
-                    method: 'trust'
-                },
-                {
-                    type: 'host',
-                    db: 'all',
-                    user: 'all',
-                    addr: '0.0.0.0/0',
-                    method: 'md5'
-                },
-                {
-                    type: 'host',
-                    db: 'all',
-                    user: 'all',
-                    addr: '::1/0',
-                    method: 'md5'
-                }
-            ]
+            pg_hba: [{type: 'local', db: 'postgres', user: 'postgres', addr: nil, method: 'trust'}]
         }
     }
   end
