@@ -17,6 +17,7 @@ gem 'jbuilder'
 group :development do
   gem 'pry-rails'
   gem 'quiet_assets'
+  gem 'puma'
 end
 
 group :development, :test do
