@@ -13,5 +13,4 @@
 /tmp
 
 # Env files
-.vagrant/
 .idea/
